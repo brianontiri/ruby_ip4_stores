@@ -1,0 +1,45 @@
+<h1><%= @store.name() %></h1>
+
+<div class = "row">
+<div class = "col-md-6">
+  <% if @store.brands().any?() %>
+
+    <h3>Brands in <%= @store.name() %>:</h3>
+    <ul>
+      <% @store.brands().each() do |brand| %>
+        <li><%= brand.name() %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p> <%= @store.name() %> has no Brands yet!</p>
+  <% end %>
+</div>
+
+<div class = "col-md-6">
+  <h3>Select all brands to stock <%= @store.name() %>:</h3>
+
+  <% if @brands.any?() %>
+    <form action="/stores/<%= @store.id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <% @brands.each() do |brand| %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="brand_ids[]" value="<%= brand.id() %>"><%= brand.name() %> <p>Manufactured On:</p><%= brand.created_at() %>
+          </label>
+        </div>
+      <% end %>
+
+      <button type="submit">Stock <%= @store.name() %></button>
+    </form>
+  <% end %>
+</div>
+</div>
+
+  <hr>
+
+  <div class="container">
+    <a href="/"><button class="button btn">Return Home</button></a>
+    <a href="/stores"><button class="button btn">All Stores</button></a>
+    <a href="/stores/new"><button class="button btn">New Store</button></a>
+    <a href="/start"><button class="button btn">Start Home</button></a>
+  </div>

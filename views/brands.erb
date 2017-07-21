@@ -1,0 +1,19 @@
+<h1>All Brands</h1>
+
+<% if @brands.any?() %>
+    <p>Click on a brand to see information about it and add stores to it:</p>
+
+    <ul>
+      <% @brands.each do |brand| %>
+      <li><a href="/brands/<%= brand.id() %>"><%= brand.name() %></a><p>Added On:</p><%= brand.created_at() %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no brands added yet!</p>
+  <% end %>
+
+  <div class="container">
+    <a href="/"><button class="button btn">Return Home</button></a>
+    <a href="/brands/new"><button class="button btn">New Brand</button></a>
+    <a href="/start"><button class="button btn">Start Home</button></a>
+  </div>

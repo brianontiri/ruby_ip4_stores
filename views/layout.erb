@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  <html>
+
+<head>
+  <title>MALL.KE</title>
+    <!--my links to bootstrap and CSS-->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <!--my links to bootstrap and CSS-->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<!-- <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> <strong></strong> </a>
+    </div>
+    <ul class="nav navbar-nav">
+    </ul>
+</nav> -->
+
+
+    <nav id="navigation">
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"> <span>MALL.KE</span></a>
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home">Brands</a></li>
+                        <li><a href="#about">Stores</a></li>
+
+                    </ul>
+
+                </div><!--/.nav-collapse -->
+            </div><!--/.container -->
+        </div><!--navbar-default-->
+    </nav><!--navigation section end here-->
+
+
+    <body>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </body>
+  </html>

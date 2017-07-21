@@ -1,0 +1,8 @@
+body {
+  overflow-x: hidden;
+  background-image: url("client2.jpg");
+  color: red;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  background-size: cover;
+}
