@@ -12,7 +12,7 @@ require("spec_helper")
       srore =Store.new({:name => ""})
        expect(store.save()).to(eq(false))
      end
-
+#redirects page whrn erroe is made
     describe(".errors") do
        it ("returns error message") do
         store=Store.new({:name => ""})
