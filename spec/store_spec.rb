@@ -25,7 +25,7 @@ require("spec_helper")
          expect(client.save()).to(eq(false))
        end
 
-
+#the relationship
   describe("#brand") do
      it("tells which brand it belongs to") do
        test_brand = Brand.create({:name => "list"})
