@@ -13,7 +13,7 @@ require("spec_helper")
       brand =Brand.new({:name => ""})
        expect(brand.save()).to(eq(false))
      end
-
+#redirects page whrn erroe is made
     describe(".errors") do
        it ("returns error message") do
          brand = Brand.new({:name => ""})
