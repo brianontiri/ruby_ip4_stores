@@ -9,7 +9,7 @@ describe('adding a new store', {:type => :feature}) do
       expect(page).to have_content('Success!')
     end
   end
-
+  #functionality to view all stores
   describe('viewing all of the stores', {:type => :feature}) do
     it('allows a user to see all of the stores that have been created') do
       store = Store.new({:name => 'Akim', :id => nil})
