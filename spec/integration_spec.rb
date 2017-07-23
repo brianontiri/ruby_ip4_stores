@@ -19,7 +19,7 @@ describe('adding a new store', {:type => :feature}) do
       expect(page).to have_content(store.name)
     end
   end
-
+  #functiionality to see a single store
   describe('seeing details for a single store', {:type => :feature}) do
     it('allows a user to click a store to see the brandsand details for it') do
       test_store = Store.new({:name => 'Jane', :id => nil})
