@@ -1,7 +1,8 @@
 <h1><%= @brand.name() %></h1>
 
 <hr>
-
+<div class="container">
+ <div class="col-md-12">
 <% if @brand.stores().any?() %>
 
     <h3>Stores selling <%= @brand.name() %>:</h3>
@@ -16,7 +17,8 @@
     <p>There are no Stores selling. <%= @brand.name() %> yet!
   <% end %>
 
-
+</div>
+</div>
   <div class="container">
     <a href="/"><button class="button btn">Return Home</button></a>
     <a href="/brands"><button class="button btn">All Brands</button></a>
