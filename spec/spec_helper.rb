@@ -8,7 +8,7 @@ ENV['RACK_ENV'] = 'test'
   Capybara.app = Sinatra::Application
   set(:show_exceptions, false)
   require('./app')
-
+#clears data after save
   RSpec.configure do |config|
     config.after(:each) do
       Store.all().each() do |store|
