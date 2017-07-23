@@ -7,3 +7,4 @@ class Stores < ActiveRecord::Migration[5.1]
       end
   end
 end
+ #prompts which colums to be added in the table
