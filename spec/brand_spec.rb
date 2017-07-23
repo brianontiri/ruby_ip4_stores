@@ -8,7 +8,7 @@ require("spec_helper")
    end
 
 
-
+#validates prences of a name
     it("validates presence of a name") do
       brand =Brand.new({:name => ""})
        expect(brand.save()).to(eq(false))
