@@ -19,7 +19,7 @@ require("spec_helper")
          expect(store.errors()).to(eq(true))
        end
     end
-
+#ensures the  input is not more than 10 characters
     it("ensures the length of the name is at most 10 characters") do
         client = Client.new({:name => "a".*(16)})
          expect(client.save()).to(eq(false))
