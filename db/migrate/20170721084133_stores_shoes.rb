@@ -8,3 +8,4 @@ class StoresShoes < ActiveRecord::Migration[5.1]
       end
   end
 end
+  #joins the relations of the two tables
