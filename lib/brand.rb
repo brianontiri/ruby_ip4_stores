@@ -5,7 +5,7 @@ class Brand < ActiveRecord::Base
 	#Active Record Validations making sure the form is not submitted blank
 	validates(:name, :presence => true)
 
-	#changes the input to capitileze_name
+	#changes the input to  the first latter to capital.
 	before_save(:uppercase_name)
 
 private
