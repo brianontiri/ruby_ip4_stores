@@ -1,11 +1,12 @@
 require("spec_helper")
 
   describe(Brand) do
-
+  #capitalize the first letter
        it("converts the first letter of name to uppercase") do
      brand= brand.create({:name => "finagle"})
      expect(brand.name()).to(eq("Finagle"))
    end
+
 
 
     it("validates presence of a name") do
