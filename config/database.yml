@@ -4,4 +4,4 @@ development:
 test:
     adapter: postgresql
     database: shoe_test
-  #promp the db creation
+  #promp the db creation.
