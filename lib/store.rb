@@ -5,7 +5,8 @@ class Store < ActiveRecord::Base
 	#validates the number of characters input by the user
 	validates(:name, {:presence => true, :length => { :maximum => 10}})
 
-	#changes the input to capitileze_name
+
+		#changes the input to  the first latter to capital.
 	before_save(:uppercase_name)
 
 	private
