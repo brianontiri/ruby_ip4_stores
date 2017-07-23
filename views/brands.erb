@@ -1,5 +1,5 @@
 <h1>Available brands</h1>
-
+  <div class="container ">
 <% if @brands.any?() %>
     <p>Click on a brand to see information :</p>
 
@@ -12,7 +12,7 @@
   <% else %>
     <p>There are no brands added yet!</p>
   <% end %>
-
+</div>
   <div class="container">
     <a href="/"><button class="button btn">Return Home</button></a>
     <a href="/brands/new"><button class="button btn">New Brand</button></a>
