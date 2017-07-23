@@ -7,7 +7,7 @@ require("spec_helper")
      expect(store.name()).to(eq("Finagle"))
    end
 
-
+#validates prences of a name
     it("validates presence of a name") do
       srore =Store.new({:name => ""})
        expect(store.save()).to(eq(false))
