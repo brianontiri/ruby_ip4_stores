@@ -23,7 +23,7 @@ require("spec_helper")
 
 
 
-
+#the relationship
   describe("#store") do
      it("tells which store it belongs to") do
        test_store = Store.create({:name => "list"})
