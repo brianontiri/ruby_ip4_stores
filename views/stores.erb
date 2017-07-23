@@ -1,11 +1,12 @@
 <h1>All Stores</h1>
 
 <% if @stores.any?() %>
-    <p>Click on a store to see information about it and add brand to it:</p>
+    <p>Click on a store to see information :</p>
 
     <ul>
       <% @stores.each do |store| %>
-      <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a><p>Became a member On:</p><%= store.created_at() %></li>
+      <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a><p>joined on:</p><%= store.created_at() %></li>
+      <p><a href="/stores/<%= store.id() %>/edit"><button class="button btn"> Edit <%= store.name() %> store</button></a></p>
       <% end %>
     </ul>
   <% else %>
@@ -13,7 +14,6 @@
   <% end %>
 
   <div class="container">
-    <a href="/"><button class="button btn">Return Home</button></a>
     <a href="/stores/new"><button class="button btn">New Store</button></a>
-    <a href="/start"><button class="button btn">Start Home</button></a>
+
   </div>

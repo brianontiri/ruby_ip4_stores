@@ -6,7 +6,7 @@ class Store < ActiveRecord::Base
 	validates(:name, {:presence => true, :length => { :maximum => 10}})
 
 	#changes the input to capitileze_name
-	before_save(:titlecase_name)
+	before_save(:uppercase_name)
 
 	private
 

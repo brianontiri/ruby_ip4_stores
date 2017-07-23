@@ -6,11 +6,11 @@ class Brand < ActiveRecord::Base
 	validates(:name, :presence => true)
 
 	#changes the input to capitileze_name
-	before_save(:titlecase_name)
+	before_save(:uppercase_name)
 
 private
 
-    define_method(:titlecase_name) do
+    define_method(:uppercase_name) do
       self.name = (name().capitalize())
     end
 end

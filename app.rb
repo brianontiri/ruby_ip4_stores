@@ -9,7 +9,7 @@ require("bundler/setup")
     erb(:index)
   end
 
-  get("/start") do
+  get("/top") do
     @brands = Brand.all()
     @stores = Store.all()
     erb(:top)
@@ -33,26 +33,6 @@ require("bundler/setup")
     erb(:brand_form)
   end
 
-  post("/stores") do
-    name = params.fetch("name")
-    store = Store.new({:name => name, :id => nil})
-    if store.save()
-      redirect("/stores/".concat(store.id().to_s()))  #implemented redirecting functionality
-    else
-      erb(:errors) #catching errors
-    end
-  end
-
-  post("/brands") do
-    name = params.fetch("name")
-    brand = Brand.new({:name => name, :id => nil})
-    if brand.save()
-      erb(:success)
-    else
-      erb(:errors) #catching errors
-    end
-  end
-
   get('/stores/:id') do
     @brands = Brand.all()
     @store = Store.find(params.fetch("id").to_i())
@@ -65,22 +45,61 @@ require("bundler/setup")
     erb(:brand_details)
   end
 
-  patch("/stores/:id") do
-    store_id = params.fetch("id").to_i()
-    @store = Store.find(store_id)
-    brand_ids = params.fetch("brand_ids")
-    @store.update({:brand_ids => brand_ids})
-    @brands = Brand.all()
-    erb(:store_details)
+  get("/stores/:id/edit") do
+     @store = Store.find(params.fetch("id").to_i())
+     erb(:store_update)
+   end
+
+   get("/brands/:id/edit") do
+     @brand = Brand.find(params.fetch("id").to_i())
+     erb(:brand_update)
+   end
+
+
+  post("/stores") do
+    name = params.fetch("name")
+    store= Store.new({:name => name, :id => nil})
+    if store.save()
+      redirect("/stores/".concat(store.id().to_s()))  #implemented redirecting functionality
+    else
+      erb(:errors) #catching errors
+    end
   end
 
-  # redirect code
+  post("/brands") do
+    name = params.fetch("name")
+    brand = Brand.new({:name => name, :id => nil})
+    if brand.save()
+      redirect("/brands/".concat(brand.id().to_s()))
+    else
+      erb(:errors) #catching errors
+    end
+  end
 
-  # delete('/tasks/:id') do
-  #   @task = Task.find(params.fetch("id").to_i()
-  #   if @task.destroy()
-  #     redirect("/tasks")
-  #   else
-  #     erb(:task)
-  #   end
-  # end
+
+   patch("/stores/:id") do
+     store_id = params.fetch("id").to_i()
+     @store = Store.find(store_id)
+     brand_id = params.fetch("brand_id")
+     @store.update({:brand_ids => brand_id})
+     @brands = Brand.all()
+     redirect("/stores")
+   end
+
+   delete("/stores/:id") do
+     @store = Store.find(params.fetch("id").to_i())
+     if @store.destroy()
+       redirect("/stores")
+     else
+       erb(:errors)
+     end
+   end
+
+   delete("/brands/:id") do
+     @brand = Brand.find(params.fetch("id").to_i())
+     if @brand.destroy()
+      redirect("/brands")
+     else
+       erb(:errors)
+     end
+   end

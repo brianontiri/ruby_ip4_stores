@@ -24,7 +24,7 @@ require("spec_helper")
 
 
   describe("#store") do
-     it("tells which storeit belongs to") do
+     it("tells which store it belongs to") do
        test_store = Store.create({:name => "list"})
        test_brand = Brand.create({:name => "task", :store_id => test_store.id})
        expect(test_brand.store()).to(eq(test_brand))

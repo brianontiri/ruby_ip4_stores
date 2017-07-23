@@ -1,7 +1,7 @@
 <h1><%= @store.name() %></h1>
 
 <div class = "row">
-<div class = "col-md-6">
+<!-- <div class = "col-md-6"> -->
   <% if @store.brands().any?() %>
 
     <h3>Brands in <%= @store.name() %>:</h3>
@@ -15,8 +15,8 @@
   <% end %>
 </div>
 
-<div class = "col-md-6">
-  <h3>Select all brands to stock <%= @store.name() %>:</h3>
+<!-- <div class = "col-md-6"> -->
+  <h3>Add a brands to <%= @store.name() %>:</h3>
 
   <% if @brands.any?() %>
     <form action="/stores/<%= @store.id %>" method="post">
@@ -24,12 +24,12 @@
       <% @brands.each() do |brand| %>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="brand_ids[]" value="<%= brand.id() %>"><%= brand.name() %> <p>Manufactured On:</p><%= brand.created_at() %>
+            <input type="checkbox" name="brand_id[]" value="<%= brand.id() %>"><%= brand.name() %> <p>added On:</p><%= brand.created_at() %>
           </label>
         </div>
       <% end %>
 
-      <button type="submit">Stock <%= @store.name() %></button>
+      <button type="submit">to add to <%= @store.name() %></button>
     </form>
   <% end %>
 </div>
@@ -41,5 +41,5 @@
     <a href="/"><button class="button btn">Return Home</button></a>
     <a href="/stores"><button class="button btn">All Stores</button></a>
     <a href="/stores/new"><button class="button btn">New Store</button></a>
-    <a href="/start"><button class="button btn">Start Home</button></a>
+    <a href="/top"><button class="button btn">Start Home</button></a>
   </div>

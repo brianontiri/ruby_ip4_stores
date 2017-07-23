@@ -21,7 +21,7 @@ require("spec_helper")
     end
 
     it("ensures the length of the name is at most 10 characters") do
-        client = Client.new({:name => "a".*(10)})
+        client = Client.new({:name => "a".*(16)})
          expect(client.save()).to(eq(false))
        end
 
