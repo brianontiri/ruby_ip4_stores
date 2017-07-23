@@ -31,7 +31,7 @@ describe('adding a new store', {:type => :feature}) do
       expect(page).to have_content(test_brand.name())
     end
   end
-
+ #functionality to add a brand to  a store
   describe('adding brands to a store', {:type => :feature}) do
     it('allows a user to add a brand to a store') do
       test_store = Store.new({:name => 'Jane ', :id => nil})
