@@ -6,7 +6,7 @@
     <ul>
       <% @stores.each do |store| %>
       <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a><p>joined on:</p><%= store.created_at() %></li>
-      <p><a href="/stores/<%= store.id() %>/edit"><button class="button btn"> Edit <%= store.name() %> store</button></a></p>
+      <p><a href="/stores/<%= store.id() %>/edit"><button class="button btn-success"> Edit <%= store.name() %> store</button></a></p>
       <% end %>
     </ul>
   <% else %>
